@@ -141,7 +141,7 @@ def create_gmsh_geo(shpfile, scalefile, geofile,
         for p in range(loop.shape[0]):
             rp = rp + 1
             #fgeo.write("Point(IP + %i) = {%.16e, %.16e, %.16e}; // %i\n" % (ip, loop[p,0], loop[p,1], 0., rp -1))
-            fgeo.write("Point(IP + %i) = {%.16e, %.16e, %.16e,%.16e}; // %i\n" % (ip, loop[p,0], loop[p,1], 0., rp -1,float(ss)))
+            fgeo.write("Point(IP + %i) = {%.16e, %.16e, %.16e,%.16e}; // %i\n" % (ip, loop[p,0], loop[p,1], 0., float(ss), rp -1))
             ip = ip + 1
 
         if ee:

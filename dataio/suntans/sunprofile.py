@@ -115,7 +115,7 @@ class Profile(object):
         """
 
         """
-        kk, znear = self.find_nearest_depth(z)
+        kk = self.find_nearest_depth(z)
 
         if zinterp == 'nearest':
 
@@ -142,7 +142,7 @@ class Profile(object):
         Zw[1:] = self.ds.dz.values.cumsum()
         kk = np.searchsorted(Zw, z) - 1
 
-        return kk, self.ds.z_r[kk]
+        return kk
 
     def close(self):
         """
